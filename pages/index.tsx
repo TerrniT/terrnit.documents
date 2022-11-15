@@ -1,86 +1,145 @@
-import type { NextPage } from 'next'
-import Head from 'next/head'
-import Image from 'next/image'
+import type { NextPage } from "next";
+import Sceen from "../components/scene";
+
+// Icons
+import { IoMdDocument } from "react-icons/io"
+import { BsGithub } from "react-icons/bs"
+
+// Models
+import { Cat } from "../components/models/Cat";
+import { Bulbasaur } from "../components/models/Bulbasaur"
+import Image from "next/image";
+
+// Images
+import ApolloSvg from "../public/ApolloLogo.svg"
+import ShokoSvg from "../public/ShokoLogo.svg"
+
+import Meta from "../components/meta/meta"
+import Navbar from "../components/navbar/navbar";
 
 const Home: NextPage = () => {
   return (
-    <div className="flex min-h-screen flex-col items-center justify-center py-2">
-      <Head>
-        <title>Create Next App</title>
-        <link rel="icon" href="/favicon.ico" />
-      </Head>
+    <div>
+      <Meta />
 
-      <main className="flex w-full flex-1 flex-col items-center justify-center px-20 text-center">
-        <h1 className="text-6xl font-bold">
-          Welcome to{' '}
-          <a className="text-blue-600" href="https://nextjs.org">
-            Next.js!
-          </a>
-        </h1>
+      <main className="min-h-screen p-8 lg:p-32 bg-white">
+        <Navbar />
 
-        <p className="mt-3 text-2xl">
-          Get started by editing{' '}
-          <code className="rounded-md bg-gray-100 p-3 font-mono text-lg">
-            pages/index.tsx
-          </code>
-        </p>
+        <div className="grid grid-cols-1 lg:grid-cols-2 2xl:grid-cols-3 gap-8 lg:gap-12 w-full max-w-8xl mt-8 lg:mt-20">
 
-        <div className="mt-6 flex max-w-4xl flex-wrap items-center justify-around sm:w-full">
-          <a
-            href="https://nextjs.org/docs"
-            className="mt-6 w-96 rounded-xl border p-6 text-left hover:text-blue-600 focus:text-blue-600"
-          >
-            <h3 className="text-2xl font-bold">Documentation &rarr;</h3>
-            <p className="mt-4 text-xl">
-              Find in-depth information about Next.js features and its API.
-            </p>
-          </a>
+          <div className="relative shadow-lg border-0 border-gray-200 bg-white rounded-md font-normal overflow-hidden">
+            <div className="relative z-10 flex flex-col justify-between h-full">
+              <div className="flex justify-between items-center px-6">
+                <div className="max-w-md">
+                  <div className="pt-4 font-bold text-lg">Todo-list</div>
+                  <div className="flex-grow pr-1 pt-1 pb-4 text-base text-gray-500 !leading-relaxed">React-three-fiber, ChakraUI </div>
+                </div>
+                <Sceen model={<Cat />} />
+              </div>
+              <div className="flex w-full border-t border-gray-200 divide-x divide-gray-200">
+                <a className="inline-flex items-center space-x-2 w-1/2 px-6 py-4 hover:bg-gray-50 transition-colors" href="https://three-todo.vercel.app">
+                  <IoMdDocument />
+                  <span className="sm:hidden">Demo</span>
+                  <span className="hidden sm:inline">Live demo</span>
+                </a>
+                <a href="https://github.com/TerrniT/react-chakra-todo" target="_blank" rel="noopener noreferrer" className="inline-flex items-center space-x-2 w-1/2 px-6 py-4 hover:bg-gray-50 transition-colors">
+                  <BsGithub />
+                  <span>GitHub</span>
+                </a>
+              </div>
+            </div>
+          </div>
 
-          <a
-            href="https://nextjs.org/learn"
-            className="mt-6 w-96 rounded-xl border p-6 text-left hover:text-blue-600 focus:text-blue-600"
-          >
-            <h3 className="text-2xl font-bold">Learn &rarr;</h3>
-            <p className="mt-4 text-xl">
-              Learn about Next.js in an interactive course with quizzes!
-            </p>
-          </a>
+          <div className="relative shadow-lg border-0 border-gray-200 bg-white rounded-md font-normal overflow-hidden">
+            <div className="relative z-10 flex flex-col justify-between h-full">
+              <div className="flex justify-between items-center px-6">
+                <div className="max-w-md">
+                  <div className="pt-4 font-bold text-lg ">Random Pokemon</div>
+                  <div className="flex-grow pr-1 pt-1 pb-4 text-base text-gray-500 !leading-relaxed">React-three-fiber, ChakraUI </div>
+                </div>
+                <Sceen model={<Bulbasaur />} />
+              </div>
+              <div className="flex w-full border-t border-gray-200 divide-x divide-gray-200">
+                <a className="inline-flex items-center space-x-2 w-1/2 px-6 py-4 hover:bg-gray-50 transition-colors" href="https://pokemon-randomizer.vercel.app">
+                  <IoMdDocument />
+                  <span className="sm:hidden">Demo</span>
+                  <span className="hidden sm:inline">Live demo</span>
+                </a>
+                <a href="https://github.com/TerrniT/react-chakra-pokemon-randomizer" target="_blank" rel="noopener noreferrer" className="inline-flex items-center space-x-2 w-1/2 px-6 py-4 hover:bg-gray-50 transition-colors">
+                  <BsGithub />
+                  <span>GitHub</span>
+                </a>
+              </div>
+            </div>
+          </div>
+          <div className="relative shadow-lg border-0 border-gray-200 bg-apollo rounded-md font-normal overflow-hidden">
+            <div className="relative z-10 flex flex-col justify-between h-full">
+              <div className="flex justify-between items-center px-6">
+                <div className="max-w-md pt-6 text-light">
+                  <div className=" pt-4 font-bold text-lg" >Apollo</div>
+                  <div className="flex-grow pr-3 pt-1 pb-4 text-base text-gray-500 !leading-relaxed">Mobile Note-taking app</div>
+                </div>
 
-          <a
-            href="https://github.com/vercel/next.js/tree/canary/examples"
-            className="mt-6 w-96 rounded-xl border p-6 text-left hover:text-blue-600 focus:text-blue-600"
-          >
-            <h3 className="text-2xl font-bold">Examples &rarr;</h3>
-            <p className="mt-4 text-xl">
-              Discover and deploy boilerplate example Next.js projects.
-            </p>
-          </a>
+                <div className="relative flex-shrink-0 w-20 h-20 self-end">
+                  <Image src={ApolloSvg} alt="logo" />
+                </div>
+              </div>
 
-          <a
-            href="https://vercel.com/import?filter=next.js&utm_source=create-next-app&utm_medium=default-template&utm_campaign=create-next-app"
-            className="mt-6 w-96 rounded-xl border p-6 text-left hover:text-blue-600 focus:text-blue-600"
-          >
-            <h3 className="text-2xl font-bold">Deploy &rarr;</h3>
-            <p className="mt-4 text-xl">
-              Instantly deploy your Next.js site to a public URL with Vercel.
-            </p>
-          </a>
+              <div className="flex w-full bg-light text-dark divide-x divide-white">
+                <a className="inline-flex items-center space-x-2 w-1/2 px-6 py-4 hover:bg-gray-50 transition-colors" target="_blank" rel="noopener noreferrer" href="">
+                  <IoMdDocument />
+                  <span className="sm:hidden">Soon</span>
+                  <span className="hidden sm:inline">In Process</span>
+
+                </a>
+
+                <a href="https://github.com/TerrniT/Apollo" target="_blank" rel="noopener noreferrer" className="inline-flex items-center space-x-2 w-1/2 px-6 py-4 hover:bg-gray-50 transition-colors">
+                  <BsGithub />
+                  <span>GitHub</span>
+                </a>
+              </div>
+            </div>
+          </div>
+
+
+          <div className="relative shadow-lg border-0 border-gray-200 bg-shoko rounded-md font-normal overflow-hidden">
+            <div className="relative z-10 flex flex-col justify-between h-full">
+              <div className="flex justify-between items-center px-6">
+                <div className="max-w-md pt-6 text-light">
+                  <div className=" pt-4 font-bold text-lg" >Shoko</div>
+                  <div className="flex-grow w-1/2 pr-4 pt-1 pb-4 text-base text-gray-500 !leading-relaxed">Website for the development team</div>
+
+                </div>
+                <div className="relative flex-shrink-0 w-20 h-20 self-center">
+                  <Image src={ShokoSvg} alt="logo" />
+                </div>
+              </div>
+
+              <div className="flex w-full bg-light text-dark divide-x divide-white">
+                <a className="inline-flex items-center space-x-2 w-1/2 px-6 py-4 hover:bg-gray-50 transition-colors" target="_blank" rel="noopener noreferrer" href="">
+                  <IoMdDocument />
+                  <span className="sm:hidden">Soon</span>
+                  <span className="hidden sm:inline">In Process</span>
+
+                </a>
+
+                <a href="https://github.com/TerrniT/Apollo" target="_blank" rel="noopener noreferrer" className="inline-flex items-center space-x-2 w-1/2 px-6 py-4 hover:bg-gray-50 transition-colors">
+                  <BsGithub />
+                  <span>GitHub</span>
+                </a>
+              </div>
+            </div>
+          </div>
         </div>
-      </main>
 
-      <footer className="flex h-24 w-full items-center justify-center border-t">
-        <a
-          className="flex items-center justify-center gap-2"
-          href="https://vercel.com?utm_source=create-next-app&utm_medium=default-template&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Powered by{' '}
-          <Image src="/vercel.svg" alt="Vercel Logo" width={72} height={16} />
-        </a>
+
+      </main >
+
+      <footer>
+
       </footer>
-    </div>
-  )
-}
+    </div >
+  );
+};
 
-export default Home
+export default Home;
