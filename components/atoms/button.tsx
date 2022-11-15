@@ -1,20 +1,38 @@
 import React from 'react'
+import { useTheme } from "next-themes"
 import { VscGithub } from "react-icons/vsc"
+import { BiMoon } from "react-icons/bi"
+import { ImSun } from "react-icons/im"
+import Link from 'next/link'
 
-const GithubButton = () => {
+export const GithubButton = () => {
   return (
-    <div className="flex justify-center items-center bg-gray-700 hover:bg-gray-500 text-white font-bold py-0 px-6 rounded">
-      <VscGithub className="w-[20px] h-[20px]" />
-      <a href='https://github.com/terrnit' className="ml-2 text-base">Github</a>
-    </div>
+    <button className="flex justify-center items-center bg-gray-700 hover:bg-gray-500 text-white font-bold py-2 px-2 rounded">
+      <Link href='https://github.com/terrnit' >
+        <VscGithub className='w-7 h-7' />
+      </Link>
+    </button>
 
   )
 }
 
-const IconButton = () => {
-  return (
-    <div>Something</div>
-  )
+
+export const ThemeSwitcher = () => {
+  const { systemTheme, theme, setTheme } = useTheme()
+
+  const currentTheme = theme == 'system' ? systemTheme : theme;
+  if (currentTheme == 'dark') {
+    return (
+      <button className="flex justify-center items-center bg-gray-700 hover:bg-gray-500 text-white font-bold py-2 px-2 rounded" onClick={() => setTheme('light')} >
+        <BiMoon className='w-7 h-7' />
+      </button>
+    )
+  } else {
+    return (
+      <button className="flex justify-center items-center bg-gray-700 hover:bg-gray-500 text-white font-bold py-2 px-2 rounded" onClick={() => setTheme('dark')} >
+        <ImSun className='w-7 h-7' />
+      </button>
+    )
+  }
 }
 
-export default GithubButton

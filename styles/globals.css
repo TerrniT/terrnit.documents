@@ -6,4 +6,12 @@
   font-family: "Montserrat";
   src: url("../public/fonts/Montserrat-Regular.ttf");
 }
+[data-theme='dark'] {
+  --background: theme('colors.black');
+  --background-secondary: theme('colors.gray.800');
+
+  --primary-dark: theme('colors.gray.300');
+  --primary-medium: theme('colors.gray.200');
+  --primary-light: theme('colors.gray.100');
+}
 
