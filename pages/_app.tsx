@@ -13,6 +13,7 @@ function MyApp({ Component, pageProps }: AppProps) {
   if (!showChild) {
     return null
   }
+
   return (
     <ThemeProvider enableSystem={true} attribute="class">
       <Component {...pageProps} />

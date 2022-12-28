@@ -1,28 +1,29 @@
 import type { NextPage } from "next";
-
-import Meta from "../components/meta/meta"
+import Main from "../components/main/main"
+import Meta from "../components/meta/meta";
 import Navbar from "../components/navbar/navbar";
 import ProjectItem from "../components/works/project-item";
-import Layout from "../components/layout/layout";
 import Footer from "../components/footer/footer";
+import Container from "../components/container/container";
+
 
 const Home: NextPage = () => {
   return (
-    <div>
-      <Meta />
-      <Layout>
+    <>
+      <Meta title="about" />
+      <Main>
         <Navbar />
-        <div className="grid grid-cols-1 lg:grid-cols-2 2xl:grid-cols-3 gap-8 lg:gap-12 w-full max-w-8xl mt-8 lg:mt-20">
+        <Container>
           <ProjectItem />
           <ProjectItem />
           <ProjectItem />
           <ProjectItem />
-        </div>
+        </Container>
         <Footer />
-      </Layout>
-
-    </div >
+      </Main>
+    </>
   );
 };
 
 export default Home;
+

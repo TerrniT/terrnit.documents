@@ -4,7 +4,7 @@ import { useFrame } from '@react-three/fiber';
 
 export function Bulbasaur(props) {
   const group = useRef()
-  const { nodes, materials } = useGLTF('/bulbasaur.glb');
+  const { nodes, materials } = useGLTF('bulbasaur.glb');
 
 
   useFrame(() => {

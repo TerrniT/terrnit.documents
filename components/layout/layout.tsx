@@ -1,4 +1,4 @@
-import React from 'react'
+import Footer from "../footer/footer";
 
 interface Props {
   children: React.ReactNode
@@ -6,10 +6,12 @@ interface Props {
 
 const Layout = ({ children }: Props) => {
   return (
-    <main className="min-h-screen p-8 lg:p-32 ">
+    <Layout>
       {children}
-    </main >
-  )
-}
+      <Footer />
+    </Layout >
+  );
+};
 
-export default Layout
+export default Layout;
+
