@@ -5,7 +5,7 @@ interface Props {
 }
 
 const Main = ({ children }: Props) => {
-  return <main className="w-49">{children}</main>;
+  return <main className="bg-light-bg dark:bg-dark-bg">{children}</main>;
 };
 
 export default Main;

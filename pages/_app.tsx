@@ -6,6 +6,7 @@ import Meta from "../components/meta";
 import Footer from "../components/footer";
 import Container from "../components/container";
 import Navbar from "../components/navbar";
+import Main from "../components/main";
 
 function MyApp({ Component, pageProps }: AppProps) {
   const [showChild, setShowChild] = useState(false);
@@ -21,12 +22,13 @@ function MyApp({ Component, pageProps }: AppProps) {
   return (
     <ThemeProvider enableSystem={true} attribute="class">
       <Meta title="home" />
-
       <Navbar part="docs" />
-      <Container>
-        <Component {...pageProps} />
-        <Footer />
-      </Container>
+      <Main>
+        <Container>
+          <Component {...pageProps} />
+          <Footer />
+        </Container>
+      </Main>
     </ThemeProvider>
   );
 }
