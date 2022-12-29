@@ -30,7 +30,7 @@ export const ThemeSwitcher = () => {
   } else {
     return (
       <button
-        className="flex justify-center items-center  bg-light-acsent hover:bg-gray-500 text-white font-bold py-1 px-1 rounded"
+        className="flex justify-center items-center  bg-light-acsent hover:bg-gray-500 text-white font-bold py-2 px-2 rounded"
         onClick={() => setTheme("dark")}
       >
         <ImSun className="w-5 h-5" />
