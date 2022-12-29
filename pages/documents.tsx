@@ -6,19 +6,21 @@ import Grid from "../components/grid";
 import CommandPallete from "../components/commandPallete";
 import Container from "../components/container";
 import Libcard from "../components/Libcard";
-import FakeInput from "../components/atoms/fakeInput";
+import Hero from "../components/hero";
 
 const Documents: NextPage = () => {
   return (
-    <Container>
-      <CommandPallete />
-      <FakeInput />
-      <Grid>
-        {Object.entries(libs).map(([id, data]) => (
-          <Libcard key={id} {...data} />
-        ))}
-      </Grid>
-    </Container>
+    <>
+      <Container>
+        <Hero />
+        <CommandPallete />
+        <Grid>
+          {Object.entries(libs).map(([id, data]) => (
+            <Libcard key={id} {...data} />
+          ))}
+        </Grid>
+      </Container>
+    </>
   );
 };
 

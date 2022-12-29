@@ -1,14 +1,12 @@
+import { useRouter } from "next/router";
 import React from "react";
 
-interface Props {
-  substr: string;
-}
-
-const Logo = ({ substr }: Props) => {
+const Logo = () => {
+  const router = useRouter();
   return (
     <a className="text-lg text-center " href="/">
       <p className="font-base flex relative">
-        TerrniT.<a className="font-bold">{substr}</a>
+        TerrniT.<a className="font-bold">{router.asPath.slice(1)}</a>
       </p>
     </a>
   );

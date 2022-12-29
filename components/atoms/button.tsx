@@ -7,9 +7,9 @@ import Link from "next/link";
 
 export const GithubButton = () => {
   return (
-    <button className="flex justify-center items-center bg-gray-700 hover:bg-gray-500 text-white font-bold py-1 px-1 rounded">
+    <button className="flex justify-center items-center bg-gray-700 hover:bg-gray-500 text-white font-bold py-1.5 px-1.5 rounded">
       <Link href="https://github.com/terrnit">
-        <VscGithub className="w-5 h-5" />
+        <VscGithub className="w-6 h-6" />
       </Link>
     </button>
   );
@@ -21,7 +21,7 @@ export const ThemeSwitcher = () => {
   if (currentTheme == "dark") {
     return (
       <button
-        className="flex justify-center items-center bg-dark-acsent hover:bg-gray-500 text-white font-bold py-1 px-1 rounded"
+        className="flex justify-center items-center bg-dark-acsent hover:bg-gray-500 text-white font-bold py-2 px-2 rounded"
         onClick={() => setTheme("light")}
       >
         <BiMoon className="w-5 h-5" />

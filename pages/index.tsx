@@ -1,11 +1,12 @@
 import type { NextPage } from "next";
-
-import Container from "../components/container";
+import Image from "next/image";
+import cat from "../assets/cat.png";
+import Notfound from "../components/notfound";
 
 const Home: NextPage = () => {
   return (
     <>
-      <h1>home</h1>
+      <Notfound />
     </>
   );
 };

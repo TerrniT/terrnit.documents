@@ -1,21 +1,19 @@
 import React from "react";
-import { ThemeSwitcher } from "./atoms/button";
+import { GithubButton, ThemeSwitcher } from "./atoms/button";
 import Logo from "./atoms/logo";
 import { links } from "../data/links";
 import Navlink from "./atoms/navlink";
-import Image from "next/image";
 
 interface Props {
-  part: string;
   children?: JSX.Element | JSX.Element[];
 }
 
-const Navbar = ({ part }: Props) => {
+const Navbar = ({ children }: Props) => {
   return (
-    <nav className="top-0 left-0 sticky right-0 py-4 justify-around flex z-20 bg-light-bg dark:bg-dark-transparent/60 backdrop-blur backdrop-filter bg-opacity-50 firefox:bg-opacity-90  transition w-full duration-150">
+    <nav className="top-0 left-0 fixed right-0 py-4 justify-around flex z-20 bg-light-bg dark:bg-dark-transparent/60 backdrop-blur backdrop-filter bg-opacity-50 firefox:bg-opacity-90  transition w-full duration-150">
       <div className="flex items-center">
         <a className="cursor-pointer">
-          <Logo substr={part} />
+          <Logo />
         </a>
       </div>
 
@@ -28,7 +26,7 @@ const Navbar = ({ part }: Props) => {
       </div>
 
       <div className="flex items-center space-x-5">
-        <ThemeSwitcher />
+        <GithubButton />
         <ThemeSwitcher />
       </div>
     </nav>
