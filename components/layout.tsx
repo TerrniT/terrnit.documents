@@ -1,7 +1,7 @@
-import Footer from "../footer/footer";
+import Footer from "../components/footer";
 
 interface Props {
-  children: React.ReactNode
+  children: React.ReactNode;
 }
 
 const Layout = ({ children }: Props) => {
@@ -9,9 +9,8 @@ const Layout = ({ children }: Props) => {
     <Layout>
       {children}
       <Footer />
-    </Layout >
+    </Layout>
   );
 };
 
 export default Layout;
-
