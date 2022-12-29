@@ -10,11 +10,12 @@
     "@heroicons/react": "^2.0.13",
     "@react-three/drei": "^9.40.0",
     "@react-three/fiber": "^8.9.1",
+    "framer-motion": "^8.0.2",
     "next": "latest",
     "next-themes": "^0.2.1",
     "react": "18.2.0",
     "react-dom": "18.2.0",
-    "react-icons": "^4.6.0",
+    "react-icons": "^4.7.1",
     "tailwindcss-scrollbar": "^0.1.0",
     "three": "^0.146.0",
     "zustand": "^4.1.5"
