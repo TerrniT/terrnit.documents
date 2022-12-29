@@ -21,8 +21,8 @@ function MyApp({ Component, pageProps }: AppProps) {
 
   return (
     <ThemeProvider enableSystem={true} attribute="class">
-      <Meta title="home" />
-      <Navbar part="docs" />
+      <Meta />
+      <Navbar />
       <Main>
         <Container>
           <Component {...pageProps} />

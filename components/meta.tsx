@@ -1,18 +1,15 @@
-import Head from 'next/head'
-import React from 'react'
+import Head from "next/head";
+import { useRouter } from "next/router";
+import React from "react";
 
-interface Props {
-  title: string
-}
-
-const Meta = ({ title }: Props) => {
+const Meta = () => {
+  const router = useRouter();
   return (
     <Head>
-      <title>terrnit.{title}</title>
+      <title>terrnit.{router.pathname.slice(1)}</title>
       <link rel="icon" href="/favicon.ico" />
     </Head>
-  )
-}
+  );
+};
 
-export default Meta
-
+export default Meta;
