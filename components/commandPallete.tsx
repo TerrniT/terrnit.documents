@@ -36,7 +36,7 @@ export default function commandPallete() {
         </Transition.Child>
         <Combobox
           as="div"
-          onChange={(lib: unknown) => {
+          onChange={(lib: any) => {
             window.open(lib.url, "_blank");
           }}
           className="scrollbar-w-1 scrollbar-thumb-gray-400 scrollbar-track-gray-200 relative bg-light-transparent/40 dark:bg-dark-transparent/60 max-w-xl mx-auto rounded-2xl shadow-2xl ring-1 ring-white/10  divide-y divide-gray-800 overflow-hidden"
