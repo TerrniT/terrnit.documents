@@ -21,12 +21,12 @@ const Container = ({ children }: Props) => {
       transition={{
         delay: 0.2,
         x: { duration: 1 },
-        default: { ease: "linear" },
+        default: { ease: "easeInOut" },
       }}
       className="min-h-screen p-1 text-black dark:text-white mx-auto my-14 max-w-6xl"
     >
       {children}
-    </motion.section>
+    </motion.section >
   );
 };
 

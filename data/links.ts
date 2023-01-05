@@ -9,11 +9,11 @@ export const links: Links[] = [
     path: "/about",
   },
   {
-    name: "portfolio",
+    name: "works",
     path: "/portfolio",
   },
   {
-    name: "docs",
+    name: "documents",
     path: "/documents",
   },
 ];

@@ -18,15 +18,14 @@ const Main = ({ children }: Props) => {
       animate="enter"
       exit="exit"
       variants={variants}
-      transition={{
-        delay: 0.5,
-        x: { duration: 1 },
-        default: { ease: "linear" },
-      }}
+      transition={
+        {
+          ease: "easeOut", duration: 1
+        }}
       className="bg-light-bg dark:bg-dark-bg "
     >
       {children}
-    </motion.main>
+    </motion.main >
   );
 };
 
