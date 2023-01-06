@@ -1,7 +1,7 @@
 import { useState, useEffect, Fragment } from "react";
 import { Dialog, Combobox, Transition } from "@headlessui/react";
 import { BsSearch } from "react-icons/bs";
-import libs from "../data/libraries";
+import libs, { Library } from "../data/libraries";
 import { useSearch } from "../store/store";
 import { AnimatePresence } from "framer-motion";
 import { motion } from "framer-motion";
@@ -12,7 +12,11 @@ export default function commandPallete() {
     handleOpen: state.setOpen,
   }));
 
-  const [query, setQuery] = useState("");
+  const [searchInput, setSearchInput] = useState("");
+
+  const searchItems = (e) => {
+    setSearchInput(e.target.value);
+  };
 
   useEffect(() => {
     function onKeydown(event: any) {
@@ -45,6 +49,7 @@ export default function commandPallete() {
           >
             <Dialog.Overlay className="fixed inset-0 bg-black/10 dark:bg-dark-bg dark:bg-opacity-10 bg-opacity-10 backdrop-blur backdrop-filter" />
           </Transition.Child>
+
           <Transition.Child
             as={Fragment}
             enter="ease-out duration-300"
@@ -64,18 +69,20 @@ export default function commandPallete() {
               <div className="flex items-center justify-center px-3">
                 <BsSearch />
                 <Combobox.Input
-                  onChange={(event) => setQuery(event.target.value)}
+                  value={searchInput}
+                  onChange={searchItems}
                   className="overflow-hidden w-full bg-transparent border-none  focus:outline-none focus:ring-0 text-sm placeholder-black/60 dark:placeholder-white/60 p-3 h-12 focus:border-transparent"
                   placeholder="Search docs..."
                 />
               </div>
-              {Object.entries(libs).length > 0 && (
+              {/* TODO: Rewrite filter-function (name -> title by type Library) */}
+              {libs.length > 0 && (
                 <Combobox.Options className="py-4  text-sm max-h-96 overflow-y-auto ">
-                  {Object.entries(libs).map(([id, data]) => (
+                  {libs.map((lib) => (
                     <Combobox.Option
                       className="px-2 my-2"
-                      key={id}
-                      value={data}
+                      key={lib.id}
+                      value={lib}
                     >
                       {({ active }) => (
                         <div
@@ -92,10 +99,10 @@ export default function commandPallete() {
                                 : "text-light-acsent dark:text-dark-acsent font-medium"
                             }`}
                           >
-                            {data.title}
+                            {lib.title}
                           </span>
                           <span className="text-black dark:text-gray-600 text-xs">
-                            {data.description}
+                            {lib.description}
                           </span>
                         </div>
                       )}

@@ -12,7 +12,7 @@ const FakeInput = () => {
       <BsSearch className="text-xl " />
 
       <p className="text-sm placeholder-white/60 py-auto">Search docs...</p>
-      <span className="px-2 py-1 text-[12px] font-bold text-gray-800  bg-light-bg border border-gray-600 rounded-lg dark:bg-dark-bg dark:text-gray-100 dark:border-gray-600">
+      <span className="px-2 py-1 text-[12px] font-bold text-gray-800  bg-light-bg border border-zinc-400 dark:border-zinc-700 rounded-lg dark:bg-dark-bg dark:text-gray-100 ">
         Ctrl + K
       </span>
     </button>
