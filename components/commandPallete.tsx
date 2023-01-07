@@ -1,4 +1,4 @@
-import { useState, useEffect, Fragment } from "react";
+import { useState, useEffect, Fragment, ChangeEvent } from "react";
 import { Dialog, Combobox, Transition } from "@headlessui/react";
 import { BsSearch } from "react-icons/bs";
 import libs, { Library } from "../data/libraries";
@@ -13,10 +13,6 @@ export default function commandPallete() {
   }));
 
   const [query, setQuery] = useState<string>("");
-
-  const searchItems = (e) => {
-    setQuery(e.target.value);
-  };
 
   const filteredLibs = libs.filter((lib) =>
     lib.title.toLowerCase().includes(query)
@@ -74,7 +70,9 @@ export default function commandPallete() {
                 <BsSearch />
                 <Combobox.Input
                   value={query}
-                  onChange={(e) => setQuery(e.target.value)}
+                  onChange={(event) =>
+                    setQuery(event?.target.value.toLowerCase())
+                  }
                   className="overflow-hidden w-full bg-transparent border-none  focus:outline-none focus:ring-0 text-sm placeholder-black/60 dark:placeholder-white/60 p-3 h-12 focus:border-transparent"
                   placeholder="Search docs..."
                 />
