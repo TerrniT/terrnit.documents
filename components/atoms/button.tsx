@@ -17,12 +17,11 @@ export const GithubButton = () => {
 };
 
 export const ThemeSwitcher = () => {
-
   const spring = {
-    type: 'spring',
+    type: "spring",
     stiffness: 700,
     damping: 30,
-  }
+  };
 
   const { systemTheme, theme, setTheme } = useTheme();
   const currentTheme = theme == "system" ? systemTheme : theme;
@@ -33,8 +32,8 @@ export const ThemeSwitcher = () => {
         whileTap={{ scale: 0.9 }}
         transition={spring}
         layout
-        className="flex justify-center items-center bg-dark-acsent text-white font-bold px-2 rounded-lg"
-        onClick={() => setTheme('light')}
+        className="flex justify-center items-center py-2 bg-dark-acsent text-white font-bold px-2 rounded-lg"
+        onClick={() => setTheme("light")}
       >
         <BiMoon className="w-4 h-4" />
       </motion.button>
@@ -46,7 +45,7 @@ export const ThemeSwitcher = () => {
         whileTap={{ scale: 0.9 }}
         transition={spring}
         layout
-        className="flex justify-center items-center bg-light-acsent text-black font-bold px-2 rounded"
+        className="flex justify-center items-center py-2 bg-light-acsent text-black font-bold px-2 rounded"
         onClick={() => setTheme("dark")}
       >
         <ImSun className="w-4 h-4" />

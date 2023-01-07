@@ -12,11 +12,15 @@ export default function commandPallete() {
     handleOpen: state.setOpen,
   }));
 
-  const [searchInput, setSearchInput] = useState("");
+  const [query, setQuery] = useState<string>("");
 
   const searchItems = (e) => {
-    setSearchInput(e.target.value);
+    setQuery(e.target.value);
   };
+
+  const filteredLibs = libs.filter((lib) =>
+    lib.title.toLowerCase().includes(query)
+  );
 
   useEffect(() => {
     function onKeydown(event: any) {
@@ -69,16 +73,16 @@ export default function commandPallete() {
               <div className="flex items-center justify-center px-3">
                 <BsSearch />
                 <Combobox.Input
-                  value={searchInput}
-                  onChange={searchItems}
+                  value={query}
+                  onChange={(e) => setQuery(e.target.value)}
                   className="overflow-hidden w-full bg-transparent border-none  focus:outline-none focus:ring-0 text-sm placeholder-black/60 dark:placeholder-white/60 p-3 h-12 focus:border-transparent"
                   placeholder="Search docs..."
                 />
               </div>
               {/* TODO: Rewrite filter-function (name -> title by type Library) */}
-              {libs.length > 0 && (
+              {filteredLibs.length > 0 && (
                 <Combobox.Options className="py-4  text-sm max-h-96 overflow-y-auto ">
-                  {libs.map((lib) => (
+                  {filteredLibs.map((lib) => (
                     <Combobox.Option
                       className="px-2 my-2"
                       key={lib.id}
