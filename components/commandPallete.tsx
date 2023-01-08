@@ -113,9 +113,9 @@ export default function commandPallete() {
                   ))}
                 </Combobox.Options>
               ) : (
-                <div className="w-full bg-gradient-to-t dark:from-black from-orange-50 flex flex-col justify-center items-center rounded-md ">
+                <div className="p-4 w-full bg-gradient-to-t dark:from-black from-orange-50 flex flex-col justify-center items-center rounded-md ">
                   <Image
-                    src="/sad_breadcat.png"
+                    src="/sad_cat_with_bread.png"
                     alt="not found"
                     width={120}
                     height={120}
