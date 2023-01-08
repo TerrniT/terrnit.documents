@@ -1,7 +1,6 @@
 import React from "react";
 import { GithubButton, ThemeSwitcher } from "./atoms/button";
 import Logo from "./atoms/logo";
-import { links } from "../data/links";
 import Navlink from "./atoms/navlink";
 import MobileMenu from "./MobileMenu";
 
@@ -16,17 +15,11 @@ const Navbar = ({ children }: Props) => {
         <Logo />
         <div className="flex justify-center items-center space-x-4">
           <div className="hidden w-full md:block md:w-auto">
-            <ul className="flex flex-col mt-4 md:flex-row  md:mt-0">
-              {links.map((link, index) => {
-                return (
-                  <Navlink href={link.path} key={index} title={link.name} />
-                );
-              })}
-
+            <ul className="flex flex-col mt-4 space-x-6 md:flex-row md:mt-0 ">
+              <Navlink href="https://github.com/terrnit" title="homepage" />
               <GithubButton />
             </ul>
           </div>
-
           <ThemeSwitcher />
           <MobileMenu />
         </div>

@@ -4,7 +4,6 @@ import { BsSearch } from "react-icons/bs";
 import libs, { Library } from "../data/libraries";
 import { useSearch } from "../store/store";
 import { AnimatePresence } from "framer-motion";
-import { motion } from "framer-motion";
 import Image from "next/image";
 
 export default function commandPallete() {

@@ -8,9 +8,13 @@ import Link from "next/link";
 
 export const GithubButton = () => {
   return (
-    <button className="flex justify-center items-center bg-transparent font-bold py-1.5 px-1.5 rounded">
-      <Link href="https://github.com/terrnit">
-        <VscGithub className="w-5 h-5 hover:text-light-acsent dark:hover:text-dark-acsent transition-colors duration-200 black dark:text-white" />
+    <button className=" md:hidden lg:block bg-transparent font-bold  rounded hover:text-light-acsent  dark:hover:text-dark-acsent transition-colors duration-200 black dark:text-white">
+      <Link
+        href="https://github.com/terrnit"
+        className="flex justify-center  items-center"
+      >
+        <VscGithub className="w-4 h-4 " />
+        <p className="mx-1 uppercase lg:block md:block text-xs ">Source</p>
       </Link>
     </button>
   );

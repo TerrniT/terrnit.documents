@@ -1,9 +1,8 @@
 import { Menu, Transition } from "@headlessui/react";
 import React, { useState } from "react";
 import { IoMenu } from "react-icons/io5/index";
-import Navlink from "./atoms/navlink";
-import { links } from "../data/links";
 import Link from "next/link";
+import { VscGithub } from "react-icons/vsc";
 
 const MobileMenu = () => {
   const [isOpen, setIsOpen] = useState<Boolean>(false);
@@ -37,20 +36,17 @@ const MobileMenu = () => {
             <div className="px-3 py-2 uppercase font-bold text-xs text-light-acsent dark:text-dark-acsent border-b border-zinc-400 dark:border-zinc-700 w-56 ">
               Sections
             </div>
-            {links.map((link, index) => {
-              return (
-                <Menu.Item>
-                  {({ close }) => (
-                    <Navlink
-                      href={link.path}
-                      key={index}
-                      title={link.name}
-                      onClick={close}
-                    />
-                  )}
-                </Menu.Item>
-              );
-            })}
+            <div className="px-3 py-2 uppercase font-bold text-xs  border-b border-zinc-400 dark:border-zinc-700 w-56 ">
+              <Link href="https://github.com/terrnit">Homepage</Link>
+            </div>
+
+            <div className="px-3 py-2 uppercase items-center font-bold text-xs border-b border-zinc-400 dark:border-zinc-700 w-56 ">
+              <Link href="https://github.com/terrnit/" className="flex ">
+                <VscGithub className="w-4 h-4 mr-1 hover:text-light-acsent  dark:hover:text-dark-acsent transition-colors duration-200 black dark:text-white" />
+
+                <p className=" uppercase lg:block md:block text-xs ">Source</p>
+              </Link>
+            </div>
           </div>
         </Menu.Items>
       </Transition>
