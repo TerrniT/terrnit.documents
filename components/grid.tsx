@@ -5,6 +5,6 @@ interface Props {
 }
 
 const Grid = ({ children }: Props) => {
-  return <div className="flex flex-wrap gap-4 mt-10">{children}</div>;
+  return <div className="flex flex-wrap gap-4 mt-10 ">{children}</div>;
 };
 export default Grid;

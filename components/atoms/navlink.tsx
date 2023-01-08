@@ -8,7 +8,7 @@ interface Props {
 
 const Navlink = ({ href, title }: Props) => {
   return (
-    <Link href={href} className="block text-1xl text-right py-1 pl-8 pr-4 ">
+    <Link href={href} className="block text-md text-left py-1 mx-3 ">
       <span className="font-medium text-black dark:text-white hover:border-b-2 hover:border-light-acsent  hover:transition-all hover:text-light-acsent dark:hover:text-dark-acsent dark:hover:border-dark-acsent">
         {title}
       </span>

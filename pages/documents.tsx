@@ -15,8 +15,8 @@ const Documents: NextPage = () => {
         <Hero />
         <CommandPallete />
         <Grid>
-          {Object.entries(libs).map(([id, data]) => (
-            <Libcard key={id} {...data} />
+          {libs.map((lib) => (
+            <Libcard key={lib.id} {...lib} />
           ))}
         </Grid>
       </Container>

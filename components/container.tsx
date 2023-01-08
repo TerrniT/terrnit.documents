@@ -23,7 +23,7 @@ const Container = ({ children }: Props) => {
         x: { duration: 1 },
         default: { ease: "easeInOut" },
       }}
-      className="min-h-screen p-1 h-full py-10  text-black dark:text-white mx-auto max-w-6xl"
+      className="min-h-screen p-1 h-full py-10 text-black dark:text-white mx-auto max-w-6xl"
     >
       {children}
     </motion.section>
