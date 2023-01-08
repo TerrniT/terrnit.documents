@@ -5,6 +5,7 @@ import React from "react";
 interface Props {
   href: string;
   title: string;
+  onClick: () => void;
 }
 
 const Navlink = ({ href, title, ...props }: Props) => {
