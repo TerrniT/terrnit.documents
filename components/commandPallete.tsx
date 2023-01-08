@@ -5,6 +5,7 @@ import libs, { Library } from "../data/libraries";
 import { useSearch } from "../store/store";
 import { AnimatePresence } from "framer-motion";
 import { motion } from "framer-motion";
+import Image from "next/image";
 
 export default function commandPallete() {
   const { open, handleOpen } = useSearch((state) => ({
@@ -78,8 +79,8 @@ export default function commandPallete() {
                 />
               </div>
               {/* TODO: Rewrite filter-function (name -> title by type Library) */}
-              {filteredLibs.length > 0 && (
-                <Combobox.Options className="py-4  text-sm max-h-96 overflow-y-auto ">
+              {filteredLibs.length > 0 ? (
+                <Combobox.Options className="py-4 text-sm max-h-96 overflow-y-auto ">
                   {filteredLibs.map((lib) => (
                     <Combobox.Option
                       className="px-2 my-2"
@@ -111,6 +112,19 @@ export default function commandPallete() {
                     </Combobox.Option>
                   ))}
                 </Combobox.Options>
+              ) : (
+                <div className="w-full bg-gradient-to-t dark:from-black from-orange-50 flex flex-col justify-center items-center rounded-md ">
+                  <Image
+                    src="/sad_breadcat.png"
+                    alt="not found"
+                    width={120}
+                    height={120}
+                  />
+
+                  <span className="text-lg font-bold text-zinc-600  mx-auto text-center mb-3 ">
+                    No result's found
+                  </span>
+                </div>
               )}
             </Combobox>
           </Transition.Child>
