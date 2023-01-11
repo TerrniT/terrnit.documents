@@ -57,3 +57,13 @@ export const ThemeSwitcher = () => {
     );
   }
 };
+
+export const SignInButton = () => {
+  return (
+    <Link href="/login">
+      <button className=" text-dark dark:text-white text-xs rounded-lg p-1 bg-light-transparent dark:bg-dark-transparent border backdrop:filter fill-transparent w-14 h-8 border-zinc-200 dark:border-zinc-600">
+        Sign In
+      </button>
+    </Link>
+  );
+};

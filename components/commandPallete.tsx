@@ -5,6 +5,7 @@ import libs, { Library } from "../data/libraries";
 import { useSearch } from "../store/store";
 import { AnimatePresence } from "framer-motion";
 import Image from "next/image";
+import { SignInButton } from "./atoms/button";
 
 export default function commandPallete() {
   const { open, handleOpen } = useSearch((state) => ({
@@ -76,6 +77,8 @@ export default function commandPallete() {
                   className="overflow-hidden w-full bg-transparent border-none  focus:outline-none focus:ring-0 text-sm placeholder-black/60 dark:placeholder-white/60 p-3 h-12 focus:border-transparent"
                   placeholder="Search docs..."
                 />
+
+                <SignInButton />
               </div>
               {/* TODO: Rewrite filter-function (name -> title by type Library) */}
               {filteredLibs.length > 0 ? (
